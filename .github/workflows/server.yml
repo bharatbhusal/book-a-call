@@ -19,16 +19,17 @@ jobs:
      uses: aws-actions/configure-aws-credentials@v4
      with:
       role-to-assume: arn:aws:iam::891084277208:role/deploy-develop
+      role-session-name: GitHub_to_AWS_via_FederatedOIDC
       aws-region: ap-south-1
 
-   - name: Install Dependencies
-     working-directory: ./server
-     run: npm install
+  #  - name: Install Dependencies
+  #    working-directory: ./server
+  #    run: npm install
 
-   # Uncomment if you need to build the server app
-   # - name: Build Server App
-   #   working-directory: ./server
-   #   run: npm run build
+  # Uncomment if you need to build the server app
+  # - name: Build Server App
+  #   working-directory: ./server
+  #   run: npm run build
 
-   - name: Deploy Server to S3 bucket
-     run: aws s3 sync ./server/* s3://book-a-call-server.bharatbhusal.com --delete
+  #  - name: Deploy Server to S3 bucket
+  #    run: aws s3 sync ./server/* s3://book-a-call-server.bharatbhusal.com --delete
