@@ -2,11 +2,11 @@ name: Server Deployment
 
 on:
  push:
-  branches:
-   - develop
+  branches: [develop]
 
 permissions:
  id-token: write
+ contents: read
 
 jobs:
  deploy-server:

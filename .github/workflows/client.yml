@@ -2,8 +2,7 @@ name: Client Deployment
 
 on:
  push:
-  branches:
-   - develop
+  branches: [prod]
 
 permissions:
  id-token: write
